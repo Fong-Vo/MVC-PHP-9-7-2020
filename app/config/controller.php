@@ -8,12 +8,16 @@ class Controller{
 		$this->view = new View();
 	}
 
-	public function loadModel($ControllerName){
-		$filePath = APP_PATH . "/app/models/" . $ControllerName .".php";
+	public function loadModel($moduleName, $controllerName){
+		$filePath = APP_PATH . "/app/". $moduleName ."/models/" . $controllerName .".php";
 		if(file_exists($filePath)){
 			require_once $filePath;
-			$modelName = $ControllerName . "Model";
+			$modelName = $controllerName . "Model";
 			$this->db = new $modelName; 
 		}
 	} 
+
+	public function setView($moduleName){
+		$this->view->moduleName = $moduleName;
+	}
 }

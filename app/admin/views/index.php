@@ -1,7 +1,7 @@
-Hello Header 
+Hello Header Admin
 
 
 <?php require_once $contentFile ?>
 
 
-Hello Footer
+Hello Footer Admin
